@@ -14,7 +14,7 @@
   //「追加」ボタンがクリックされたときの処理を実装する
   //   - テキストボックスに入力されたテキストをTodoリスト一覧に追加する
   //   - テキストボックスの中を空にする
-  addButton.addEventListener('click', (event) => {
+  addButton.addEventListener('click', event => {
     const todo = inputBox.value;
     inputBox.value = '';
 
@@ -29,8 +29,8 @@
   //    - li要素内に削除ボタンを配置して、削除ボタンをクリックしたら対応するタスクを削除する
   function showTodos() {
     // ul要素内を中身を一旦空っぽにして、現在のTodoリスト一覧を再度表示する
-    while(listContainer.firstChild) {
-      listContainer.removeChild( listContainer.firstChild );
+    while (listContainer.firstChild) {
+      listContainer.removeChild(listContainer.firstChild);
     }
 
     // todosの情報を使ってTodoリストを作成
@@ -45,7 +45,7 @@
       // 新規作成したli要素に削除ボタンを付ける
       const deleteButton = document.createElement('button');
       deleteButton.textContent = '削除';
-      deleteButton.addEventListener('click', (event) => {
+      deleteButton.addEventListener('click', event => {
         deleteTodo(index);
       });
       todoItem.appendChild(deleteButton);
